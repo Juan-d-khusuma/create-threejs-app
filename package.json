@@ -1,0 +1,20 @@
+{
+  "bin": {
+    "create-threejs-app": "./index.js"
+  },
+  "name": "create-threejs-app",
+  "version": "1.0.0",
+  "description": "Automaticly generate a ThreeJS website boilerplate ",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.js"
+  },
+  "author": "khusuma",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
