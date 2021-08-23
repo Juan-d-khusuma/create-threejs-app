@@ -3,11 +3,6 @@ const path = require("path");
 const fs = require("fs");
 const chalk = require("chalk");
 
-const projectName = process.argv[2] || "test";
-const currentPath = process.cwd();
-const projectPath = path.join(currentPath, projectName);
-const git_repo = "https://github.com/Juan-d-khusuma/threejs-starter.git";
-
 if (process.argv.length < 3) {
   console.log(
     chalk.bgRed.bold(" ERROR   ") +
@@ -19,6 +14,11 @@ if (process.argv.length < 3) {
   );
   process.exit(1);
 }
+
+const projectName = process.argv[2] || "test";
+const currentPath = process.cwd();
+const projectPath = path.join(currentPath, projectName);
+const git_repo = "https://github.com/Juan-d-khusuma/threejs-starter.git";
 
 try {
   fs.mkdirSync(projectPath);

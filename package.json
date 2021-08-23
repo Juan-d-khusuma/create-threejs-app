@@ -7,7 +7,8 @@
   "description": "Automaticly generate a ThreeJS website boilerplate ",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build index.js"
+    "build": "parcel build index.js",
+    "start": "parcel index.js"
   },
   "author": "khusuma",
   "license": "ISC",
