@@ -16,6 +16,7 @@ if (process.argv.length < 3) {
 }
 
 const projectName = process.argv[2] || "test";
+const useYarn = process.argv.includes("--yarn");
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
 const git_repo = "https://github.com/Juan-d-khusuma/threejs-starter.git";
@@ -38,21 +39,24 @@ try {
 
 async function main() {
   try {
-    console.log(chalk.bgBlue(" INFO ") + "Creating the starter template...");
-    execSync(`git clone --depth 1 ${git_repo} ${projectPath}`);
+    console.log(chalk.bgBlue(" INFO ") + " Creating the starter template...");
+    execSync(`git clone ${git_repo} ./${projectName}`);
+    console.log("✅ Started Template Created");
 
     process.chdir(projectPath);
 
-    console.log(chalk.bgBlue(" INFO ") + "Installing dependencies...");
-    execSync("npm install");
+    console.log(chalk.bgBlue(" INFO ") + " Installing dependencies...");
+    execSync(useYarn ? "npm install" : "yarn");
+    console.log("✅ Dependencies installed");
 
-    console.log(chalk.bgBlue(" INFO ") + "Removing useless files");
+    console.log(chalk.bgBlue(" INFO ") + " Cleaning stuff up...");
     execSync("npx rimraf ./.git");
     fs.rmdirSync(path.join(projectPath, "bin"), { recursive: true });
+    console.log("✅ The project is clean");
 
     console.log(
       chalk.bgGreenBright(" SUCCESS ") +
-        "The installation is done, this is ready to use ✅"
+        " The installation is done, this is ready to use ✅"
     );
   } catch (error) {
     console.log(error);
