@@ -1,7 +1,7 @@
 {
   "bin": "./index.js",
-  "name": "jdk-threejs-boilerplate",
-  "version": "2.0.0",
+  "name": "generate-threejs-boilerplate",
+  "version": "1.0.0",
   "description": "Automaticly generate a ThreeJS website boilerplate ",
   "main": "index.js",
   "scripts": {
