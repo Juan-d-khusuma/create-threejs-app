@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { execSync } = require("child_process");
 const path = require("path");
 const fs = require("fs");
@@ -45,13 +46,13 @@ async function main() {
 
     process.chdir(projectPath);
 
+    useYarn && console.log(chalk.bold("Using Yarn..."));
     console.log(chalk.bgBlue(" INFO ") + " Installing dependencies...");
     execSync(useYarn ? "npm install" : "yarn");
     console.log("✅ Dependencies installed");
 
     console.log(chalk.bgBlue(" INFO ") + " Cleaning stuff up...");
     execSync("npx rimraf ./.git");
-    fs.rmdirSync(path.join(projectPath, "bin"), { recursive: true });
     console.log("✅ The project is clean");
 
     console.log(

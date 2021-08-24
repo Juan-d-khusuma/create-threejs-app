@@ -1,22 +1,21 @@
 {
-  "bin": {
-    "create-threejs-app": "./index.js"
-  },
+  "bin": "./index.js",
   "name": "create-threejs-app",
   "version": "1.0.0",
   "description": "Automaticly generate a ThreeJS website boilerplate ",
   "main": "index.js",
   "scripts": {
     "build": "parcel build index.js",
-    "start": "parcel index.js"
+    "start": "node src/index.js"
   },
   "author": "khusuma",
   "license": "ISC",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5"
-  },
   "dependencies": {
     "chalk": "^4.1.2",
     "rimraf": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juan-d-khusuma/create-threejs-app.git"
   }
 }
