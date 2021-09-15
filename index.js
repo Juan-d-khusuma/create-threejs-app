@@ -16,7 +16,7 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 
-const projectName = process.argv[2] || "test";
+const projectName = process.argv[2];
 const useYarn = process.argv.includes("--yarn");
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
